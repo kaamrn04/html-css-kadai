@@ -1,11 +1,10 @@
 body {
-    /* ブラウザが自動適用するデフォルトの上下左右のマージンをリセット */
     margin: 0; 
-    
-    /* 必要に応じて、paddingもリセットしておくと安全です */
-    padding: 0; 
+        padding: 0; 
 }
-
+.header {
+    width: 100%;
+}
 .site-header {
 width: 100%;
 background-color: white;
@@ -14,40 +13,97 @@ position: fixed;
 top: 0;
 left: 0;
 z-index: 1000;
+
 }
 .header-inner {
-max-width: 1200px;
-margin: 0 auto;
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 10px 20px;
+   display: flex;
+    justify-content: space-between;
+    margin: 0 36px 0 36px;
+    max-width: 100%;
+    position: relative;
+
 }
-.logo img {
+
+.header-logo{
+ align-self: center;
+
+}
+.header-pc {
     display: block;
     height: 20px;
     width: auto;
 }
-.site-nav .nav-list {
+
+.header-sp{
+  display: none;
+  height: 16px;
+  width: auto;
+}
+/*メニュ-*/
+@media screen and (max-width: 1080px) {
+    .headerhamburger {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 17px;
+        margin: auto;
+        z-index: 100;
+    }
+        .hamburger-line:first-child {
+        top: 0;
+    }
+       .hamburger-line{
+        position: absolute;
+        top: 50%;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #A2A2A4;
+        transform: translate(0, -50%);
+        border-radius: 10px;
+        transition: top 0.2s, transform 0.2s, opacity 0.3s;
+    }
+
+       .hamburger-line:last-child {
+        top: 100%;
+    }
+
+.header-inner{
+  margin: 0 16px;
+}
+
+.header-pc{
+  display: none;
+}
+.header-sp{
+  display: block;
+}
+.site-nav ,.nav-list{
+  display: none;
+}
+
+}
+
+
+
+.nav-list {
 display: flex;
 list-style: none;
-margin: 0;
-padding: 0;
 align-items: center;
+justify-content: space-between;
+
 }
 
+.nav-item{
+ margin-right: 45px;
+}
 
-.site-nav .nav-item {
-margin-left: 20px;
-}
-.site-nav .nav-item a {
-text-decoration: none;
-color: #333;
-font-size: 16px;
-}
 
 .nav-link{
   text-decoration: none;
+    color: #333;
+   
 
 }
 
@@ -55,15 +111,13 @@ font-size: 16px;
 .nav-link>span:first-child {
     font-family: "Lato", sans-serif;
     font-size: 12px;
-        line-height: 14.4px; 
+  line-height: 14.4px; 
 
 
 }
 
 .nav-link>span:last-child {
     font-size: 10px;
-
-
 }
 
 .nav-link span {
@@ -75,6 +129,10 @@ font-size: 16px;
 
 }
 
+.header-inner>*:last-child {
+    display: inline-flex
+;
+}
 
 /* 他のリンクと区別する */
 .nav-item.contact a {
@@ -91,9 +149,6 @@ width: 100%;
 font-weight: 700;
 align-items: center;
 
-
-
-  
 }
 
 /* ホバー時のエフェクト */
@@ -101,29 +156,13 @@ align-items: center;
 background-color: #ffae42; /* 少し明るく */
 }
 
-.hamburger {
-display: none;
-background: none;
-border: none;
-font-size: 24px;
-cursor: pointer;
-}
-
-@media (max-width: 768px) {
-.site-nav {
+.headerhamburger {
 display: none;
 }
-.hamburger {
-display: block;
-}
-
-.Logo {
-        transition: opacity 0.2s;
-    }
-}
 
 
-/*ファーストビュー*/
+/*PCファーストビュー*/
+
 
 .firstview {
     position: relative;
@@ -156,8 +195,9 @@ display: block;
     right: 0;
     width: 775px;
   }
-
-
+.firstview-mainsp{
+  display: none;
+}
 
   .firstview-container {
     max-width: 1040px;
@@ -167,26 +207,27 @@ display: block;
     padding-top: 219px;
 }
 
-.firstview-content{
+.firstviewcontent{
     position: relative;
     width:fit-content;
 }
 
-.firstview-title{
+.firstviewcontent-title{
     color: #333;
     font-family: "Lato", sans-serif;
     font-size: 42px;
     font-weight: 800;
     line-height: 63px;
     margin-bottom: 16px;
-   
+    margin-top: 0;
 
+  
 }
 
-.firstview-no1{
+.firstviewcontent-badge{
   position: absolute;
-  top: -105px;
-  right: -150px;
+  top: -110px;
+  right: -180px;
 
 }
 
@@ -214,4 +255,68 @@ display: block;
   line-height: 16px;
       color:#333;
 
+}
+
+
+/*ヘッダーモバイル（ナビメニュー）*/
+
+@media (max-width: 768px) {
+
+.site-header{
+padding: 15px 0px;
+}
+  .header-inner  {
+        max-width: 100%;
+        margin:16px;
+        
+    }
+
+
+.header-pc{
+  display: none !important; 
+}
+.site-nav .nav-list{
+        display: none;
+    }
+    .headerhamburger {
+        display: block; 
+        /* ...その他のスタイル... */
+    }
+
+/*モバイルファーストビュー*/
+.firstview{
+  height: fit-content;
+}
+.firstview-container {
+        padding-top: 0;
+        padding-bottom: 20px;
+        max-width: none;
+        padding-left: 16px;
+        padding-right: 16px;
+}
+.firstviewcontent-title {
+        font-size: 22px;
+        line-height: 36px;
+        position: relative;
+        width: fit-content;
+}
+.firstviewcontent-badge{
+height: 102px;
+        width: 102px;
+        top: -20px;
+        right: -110px;}
+
+.firstview-button{
+width: 100% !important;}
+
+.firstview-left, 
+.firstview-right, 
+.firstview-circle, 
+.firstview-main {
+    display: none;
+}
+.firstview-mainsp{
+  display: block;
+        margin-bottom: 7px;
+        width: 100%;}
 }
