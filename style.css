@@ -1,0 +1,217 @@
+body {
+    /* ブラウザが自動適用するデフォルトの上下左右のマージンをリセット */
+    margin: 0; 
+    
+    /* 必要に応じて、paddingもリセットしておくと安全です */
+    padding: 0; 
+}
+
+.site-header {
+width: 100%;
+background-color: white;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+}
+.header-inner {
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 20px;
+}
+.logo img {
+    display: block;
+    height: 20px;
+    width: auto;
+}
+.site-nav .nav-list {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+align-items: center;
+}
+
+
+.site-nav .nav-item {
+margin-left: 20px;
+}
+.site-nav .nav-item a {
+text-decoration: none;
+color: #333;
+font-size: 16px;
+}
+
+.nav-link{
+  text-decoration: none;
+
+}
+
+
+.nav-link>span:first-child {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+        line-height: 14.4px; 
+
+
+}
+
+.nav-link>span:last-child {
+    font-size: 10px;
+
+
+}
+
+.nav-link span {
+    display: block;/*縦に並べる*/
+    font-weight: 700;
+    text-align: center;
+        margin: 0;
+    padding: 0;
+
+}
+
+
+/* 他のリンクと区別する */
+.nav-item.contact a {
+font-size: 14px;
+background-color: #f79214; /* オレンジっぽい色 */
+color: #fff;
+padding: 0 20px;
+border-radius: 38px; /* 角を丸くする */
+display:flex;
+height: 40px;
+text-align: center;
+justify-content: center;
+width: 100%;
+font-weight: 700;
+align-items: center;
+
+
+
+  
+}
+
+/* ホバー時のエフェクト */
+.nav-item.contact a:hover {
+background-color: #ffae42; /* 少し明るく */
+}
+
+.hamburger {
+display: none;
+background: none;
+border: none;
+font-size: 24px;
+cursor: pointer;
+}
+
+@media (max-width: 768px) {
+.site-nav {
+display: none;
+}
+.hamburger {
+display: block;
+}
+
+.Logo {
+        transition: opacity 0.2s;
+    }
+}
+
+
+/*ファーストビュー*/
+
+.firstview {
+    position: relative;
+    height: 739px;
+}
+.firstview-left, 
+.firstview-right, 
+.firstview-circle, 
+.firstview-main {
+    position: absolute; 
+    /* デフォルトで画像を画面外にはみ出させない */
+    max-width: none; 
+}
+
+.firstview-left{
+    top: -70px;
+    left: 0;
+}
+.firstview-right{
+      right: 0;
+    bottom: 70px;
+  }
+  .firstview-circle{
+    top: 84px;
+    left: -70px;
+  }
+  .firstview-main{
+
+    top: -70px;
+    right: 0;
+    width: 775px;
+  }
+
+
+
+  .firstview-container {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 219px;
+}
+
+.firstview-content{
+    position: relative;
+    width:fit-content;
+}
+
+.firstview-title{
+    color: #333;
+    font-family: "Lato", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 63px;
+    margin-bottom: 16px;
+   
+
+}
+
+.firstview-no1{
+  position: absolute;
+  top: -105px;
+  right: -150px;
+
+}
+
+.firstview-button{
+  align-items: center;
+    background-color: #F79214;
+    border: none;
+    border-radius: 38px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    margin-bottom: 16px;
+    width: 380px;
+}
+
+.firstview-capsion{
+  font-size: 12px;
+  line-height: 16px;
+      color:#333;
+
+}
